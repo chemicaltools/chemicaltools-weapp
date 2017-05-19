@@ -1,0 +1,10 @@
+/* pages/mass/mass.wxss */
+.output {
+  margin-top: 20px;
+}
+.inputarea {
+  margin-top: 20px;
+}
+.buttonarea {
+  margin-top: 20px;
+}

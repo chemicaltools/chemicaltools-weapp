@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<!--<view class="container">-->
+  <view  bindtap="bindViewTap" style="flex-direction:row;" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <!--<view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>!-->
+  <view class="buttonarea">
+    <button class="button" bindtap="openelement">{{element}}</button>
+    <button class="button" bindtap="openmass">{{mass}}</button>
+    <button class="button" bindtap="opendeviation">{{deviation}}</button>
+    <button class="button" bindtap="opengas">{{gas}}</button>
+    <button class="button" bindtap="openacid">{{acid}}</button>
+    <button class="button" bindtap="openexam">{{exam}}</button>
+  </view>
+<!--</view>-->

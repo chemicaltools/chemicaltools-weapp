@@ -1,0 +1,12 @@
+<!--pages/mass/mass.wxml-->
+<view>
+  <view class="inputarea">
+    <input  bindinput="bindKeyInput" focus/>
+  </view>
+  <view class="buttonarea">
+    <button class="button" type="primary" bindtap="mass">{{button}}</button>
+  </view>
+  <view class="output" style="flex-direction:row;">
+      <text class="output">{{output}}</text>
+  </view>
+</view>

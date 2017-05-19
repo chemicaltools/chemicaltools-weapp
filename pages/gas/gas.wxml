@@ -1,0 +1,12 @@
+<!--pages/gas/gas.wxml-->
+<radio-group class="radio-group" bindchange="radioChange">    
+    <radio value="p" placeholder="压强p" checked/>压强p:
+    <input type="digit" confirm-type="next" bindinput="bindKeyInputp" value="{{p}}"/>
+    <radio value="V" placeholder="体积V"/>体积V:
+    <input type="digit" confirm-type="next" bindinput="bindKeyInputV" value="{{V}}"/>
+    <radio value="n" placeholder="物质的量n"/>物质的量n:
+    <input type="digit" confirm-type="next" bindinput="bindKeyInputn" value="{{n}}"/>
+    <radio value="T" placeholder="温度T"/>温度T:
+    <input type="digit" confirm-type="next" bindinput="bindKeyInputT" value="{{T}}"/>
+</radio-group>
+<button class="button" type="primary" bindtap="gas">{{button}}</button>

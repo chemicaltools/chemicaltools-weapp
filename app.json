@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/element/element",
+    "pages/mass/mass",
+    "pages/deviation/deviation",
+    "pages/gas/gas",
+    "pages/acid/acid",
+    "pages/exam/exam"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "化学e+",
+    "navigationBarTextStyle":"black"
+  }
+}

@@ -1,0 +1,7 @@
+<!--pages/exam/exam.wxml-->
+{{question}}
+<button class="button" bindtap="A">{{A}}</button>
+<button class="button" bindtap="B">{{B}}</button>
+<button class="button" bindtap="C">{{C}}</button>
+<button class="button" bindtap="D">{{D}}</button>
+{{output}}
