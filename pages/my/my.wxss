@@ -1,0 +1,20 @@
+/* pages/my/my.wxss */
+  .navigator {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0 12px;
+  height: 46px;
+  line-height: 46px;
+  background-image: url('http://finding-1251553053.cossh.myqcloud.com/geren/jiantou.png');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: 50rpx 50rpx;
+  font-size: 16px;
+}
+  .button {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0 12px;
+  height: 46px;
+  line-height: 46px;
+}

@@ -2,12 +2,12 @@
 <!--pages/mass/mass.wxml-->
 <view>
   <view class="inputarea">
-    <textarea  bindinput="bindKeyInput" focus/>
+    <textarea bindinput="bindKeyInput" style=" width:100%;background: #fff;" focus/>
   </view>
   <view class="buttonarea">
     <button class="button" type="primary" bindtap="deviation">{{button}}</button>
   </view>
   <view class="output" style="flex-direction:row;">
-      <text class="output">{{output}}</text>
+    <text class="output">{{output}}</text>
   </view>
 </view>

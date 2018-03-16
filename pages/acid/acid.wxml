@@ -1,13 +1,17 @@
 <!--pages/acid/acid.wxml-->
-<radio-group class="radio-group" bindchange="radioChange">
+<radio-group class="radio-group" bindchange="radioChange" class="flex-wrap input-wrap">
   <label class="radio" wx:for="{{items}}">
     <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
   </label>
 </radio-group>
-{{pKaorpKb}}:
+    <view class="flex-wrap input-wrap">
+<text class="label">{{pKaorpKb}}</text>
 <input type="digit" confirm-type="next" bindinput="bindKeyInputpKa"/>
-{{c}}:
+</view>
+    <view class="flex-wrap input-wrap">
+<text class="label">{{c}}</text>
 <input type="digit" confirm-type="next" bindinput="bindKeyInputc"/>
+</view>
 <view class="buttonarea">
     <button class="button" type="primary" bindtap="acid">{{button}}</button>
   </view>

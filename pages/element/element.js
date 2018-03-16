@@ -5,7 +5,7 @@ var inputValue
 Page({
   data: {
     button: '查询',
-    output:'请输入元素名称/符号/原子序数/IUPAC名进行查询',
+    output:'请输入元素名称/符号/原子序数/IUPAC名进行查询（支持拼音模糊查询，如可输入“蛤”或“ha”查询“铪”）',
     userInfo: {}
   },
   bindKeyInput: function(e) {
@@ -14,7 +14,7 @@ Page({
   element:function(){
     var  page=this
     wx.request({
-        url: 'https://njzjz.oicp.net/api.php',
+        url: 'https://web.zgchemicals.mobi/api.php',
         data: {
             type:'element',
             input: inputValue

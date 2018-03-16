@@ -28,7 +28,7 @@ Page({
   acid:function(){
     var  page=this
     wx.request({
-        url: 'https://njzjz.oicp.net/api.php',
+      url: 'https://web.zgchemicals.mobi/api.php',
         data: {
             type:'acid',
             c: c,

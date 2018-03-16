@@ -8,11 +8,12 @@
     <text class="user-motto">{{motto}}</text>
   </view>!-->
   <view class="buttonarea">
-    <button class="button" bindtap="openelement">{{element}}</button>
-    <button class="button" bindtap="openmass">{{mass}}</button>
-    <button class="button" bindtap="opendeviation">{{deviation}}</button>
-    <button class="button" bindtap="opengas">{{gas}}</button>
-    <button class="button" bindtap="openacid">{{acid}}</button>
-    <button class="button" bindtap="openexam">{{exam}}</button>
+    <button class="button" bindtap='open' data-page='../element/element'>{{element}}</button>
+    <button class="button" bindtap="open" data-page='../mass/mass'>{{mass}}</button>
+    <button class="button" bindtap="open" data-page='../deviation/deviation'>{{deviation}}</button>
+    <button class="button" bindtap="open" data-page='../gas/gas'>{{gas}}</button>
+    <button class="button" bindtap="open" data-page='../acid/acid'>{{acid}}</button>
+    <button class="button" bindtap="open" data-page='../exam/exam'>{{exam}}</button>
+    <button bindtap="lab" class="button">实验室安全管理平台</button>
   </view>
 <!--</view>-->

@@ -1,10 +1,10 @@
 <!--element.wxml-->
 <view>
-  <view class="inputarea">
-    <input  bindinput="bindKeyInput" focus/>
+  <view class="inputarea" class="flex-wrap input-wrap">
+    <input  bindinput="bindKeyInput" focus class="account-info-input"/>
   </view>
   <view class="buttonarea">
-    <button class="button" type="primary" bindtap="element">{{button}}</button>
+    <button class="button" type="primary" bindtap="element" class="submit">{{button}}</button>
   </view>
   <view class="output" style="flex-direction:row;">
       <text class="output">{{output}}</text>

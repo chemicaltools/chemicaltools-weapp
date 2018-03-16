@@ -1,18 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/element/element",
     "pages/mass/mass",
     "pages/deviation/deviation",
     "pages/gas/gas",
     "pages/acid/acid",
-    "pages/exam/exam"
+    "pages/exam/exam",
+    "pages/my/my",
+    "pages/user/user",
+    "pages/link/link"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "化学e+",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/guangchang2.png",
+        "selectedIconPath": "images/guangchang.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/geren2.png",
+        "selectedIconPath": "images/geren.png"
+      }
+    ],
+    "backgroundColor": "#ADD8E6",
+    "color": "#FFFAF0",
+    "selectedColor": "#8B2323"
   }
 }

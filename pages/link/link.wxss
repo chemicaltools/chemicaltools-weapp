@@ -1,12 +1,4 @@
-.output {
-  margin-top: 20px;
-}
-.inputarea {
-  margin-top: 20px;
-}
-.buttonarea {
-  margin-top: 20px;
-}
+/* pages/user/user.wxss */
 .input-wrap {
   background: #fff;
   border-bottom: 1px solid #eee;
