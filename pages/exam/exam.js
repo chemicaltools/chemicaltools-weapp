@@ -38,13 +38,13 @@ Page({
     } catch (e) {
       var mode=2
     }
-    if(!mode)mode=2
+    if (isNaN(mode))mode=2
     try {
       var maxnumber = parseInt(wx.getStorageSync('exammax'))
     } catch (e) {
       var maxnumber = 86
     }
-    if (!maxnumber) maxnumber=86
+    if (isNaN(maxnumber)) maxnumber=86
     var data = this.makequestion( mode, maxnumber)
     question = data[0]
     var todos = data.slice(1)
