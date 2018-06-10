@@ -7,10 +7,20 @@ AV.init({
 
 App({
   onLaunch: function () {
+    var that=this
+    this.getelementinfo()
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    wx.getSystemInfo({
+      success: function (res) {
+        let model = res.model.substring(0, res.model.indexOf("X")) + "X";
+        if (model == 'iPhone X') {
+          that.globalData.isIpx = true  //判断是否为iPhone X 默认为值false，iPhone X 值为true
+        }
+      }
+    })
 
     // 登录
     wx.login({
@@ -55,6 +65,22 @@ App({
   },
   globalData: {
     userInfo: null,
-    user: null
-  }
+    user: null,
+    isIpx: false
+  },
+  getelementinfo: function () {
+    var that = this
+    wx.request({
+      url: 'https://test-10061032.cossh.myqcloud.com/wx/element.json',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        that.globalData.elementinfo = res.data
+        if (getCurrentPages().length != 0) {
+          getCurrentPages()[getCurrentPages().length - 1].onLoad(getCurrentPages()[getCurrentPages().length - 1].options)
+        }
+      }
+    })
+  },
 })

@@ -1,4 +1,6 @@
 <!--pages/my/my.wxml-->
+<navigator url="../setting/setting" class="navigator user">设置</navigator>
 <navigator url="../user/user" class="navigator user">账户修改</navigator>
 <navigator url="../link/link" class="navigator user">账户绑定</navigator>
-<button open-type="contact"  class="navigator user" style="text-align:left">反馈意见</button>
+<button open-type="contact"  class="navigator user">反馈意见</button>
+<button open-type="share" class="navigator user">分享小程序</button>

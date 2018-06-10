@@ -9,7 +9,8 @@
     "pages/exam/exam",
     "pages/my/my",
     "pages/user/user",
-    "pages/link/link"
+    "pages/link/link",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",

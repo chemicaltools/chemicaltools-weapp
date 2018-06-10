@@ -1,0 +1,8 @@
+/* pages/setting/setting.wxss */
+.label {
+  color: #999;
+  width: 12em;
+}
+.section{
+  font-weight:bold;
+}

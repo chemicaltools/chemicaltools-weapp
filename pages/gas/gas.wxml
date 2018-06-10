@@ -1,20 +1,26 @@
 <!--pages/gas/gas.wxml-->
-<radio-group class="radio-group" bindchange="radioChange">    
-<view class="flex-wrap input-wrap">
-    <radio value="p" placeholder="压强p" checked/><text class="label">压强p</text>
-    <input type="digit" confirm-type="next" bindinput="bindKeyInputp" value="{{p}}" class="account-info-input"/>
+<view class="container">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view class="flex-wrap input-wrap">
+      <radio value="p" placeholder="压强p" checked/>
+      <text class="label">压强p</text>
+      <input type="digit" confirm-type="next" bindinput="bindKeyInputp" value="{{p}}" class="info-input" placeholder="如101.325" focus/>
     </view>
     <view class="flex-wrap input-wrap">
-    <radio value="V" placeholder="体积V"/><text class="label">体积V</text>
-    <input type="digit" confirm-type="next" bindinput="bindKeyInputV" value="{{V}}" class="account-info-input"/>
-        </view>
-    <view class="flex-wrap input-wrap">
-    <radio value="n" placeholder="物质的量n"/><text class="label">物质的量n</text>
-    <input type="digit" confirm-type="next" bindinput="bindKeyInputn" value="{{n}}" class="account-info-input"/>
-        </view>
-    <view class="flex-wrap input-wrap">
-    <radio value="T" placeholder="温度T"/><text class="label">温度T</text>
-    <input type="digit" confirm-type="next" bindinput="bindKeyInputT" value="{{T}}" class="account-info-input"/>
+      <radio value="V" placeholder="体积V" />
+      <text class="label">体积V</text>
+      <input type="digit" confirm-type="next" bindinput="bindKeyInputV" value="{{V}}" class="info-input" placeholder="如22.413"/>
     </view>
-</radio-group>
-<button class="button" type="primary" bindtap="gas">{{button}}</button>
+    <view class="flex-wrap input-wrap">
+      <radio value="n" placeholder="物质的量n" />
+      <text class="label">物质的量n</text>
+      <input type="digit" confirm-type="next" bindinput="bindKeyInputn" value="{{n}}" class="info-input" placeholder="如1"/>
+    </view>
+    <view class="flex-wrap input-wrap">
+      <radio value="T" placeholder="温度T" />
+      <text class="label">温度T</text>
+      <input type="digit" confirm-type="next" bindinput="bindKeyInputT" value="{{T}}" class="info-input" placeholder="如273.15"/>
+    </view>
+  </radio-group>
+  <button class="button" type="primary" bindtap="getgas">{{button}}</button>
+</view>

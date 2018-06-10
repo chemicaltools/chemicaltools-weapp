@@ -4,7 +4,6 @@ var app = getApp()
 Page({
   data: {
     defaultSize: 'default',
-    //motto: 'Hello World',
     element: '元素查询',
     mass: '质量计算',
     deviation: '偏差计算',
@@ -14,13 +13,7 @@ Page({
     userInfo: {}
   },
   //事件处理函数
-  bindViewTap: function () {
-    //wx.navigateTo({
-    //  url: '../logs/logs'
-    //})
-  },
   onLoad: function () {
-    console.log('onLoad')
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

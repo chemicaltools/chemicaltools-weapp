@@ -1,12 +1,9 @@
 <!--index.wxml-->
-<!--<view class="container">-->
-  <view  bindtap="bindViewTap" style="flex-direction:row;" class="userinfo">
+<view class="container">
+  <view style="flex-direction:row;" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <!--<view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>!-->
   <view class="buttonarea">
     <button class="button" bindtap='open' data-page='../element/element'>{{element}}</button>
     <button class="button" bindtap="open" data-page='../mass/mass'>{{mass}}</button>
@@ -16,4 +13,4 @@
     <button class="button" bindtap="open" data-page='../exam/exam'>{{exam}}</button>
     <button bindtap="lab" class="button">实验室安全管理平台</button>
   </view>
-<!--</view>-->
+</view>

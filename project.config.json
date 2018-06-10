@@ -20,9 +20,59 @@
 			"current": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"plugin": {
 			"current": -1,
 			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": 0,
+					"name": "element",
+					"pathName": "pages/element/element",
+					"query": "input=2"
+				},
+				{
+					"id": -1,
+					"name": "mass",
+					"pathName": "pages/mass/mass",
+					"query": "input=C2"
+				},
+				{
+					"id": 2,
+					"name": "deviation",
+					"pathName": "pages/deviation/deviation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "gas",
+					"pathName": "pages/gas/gas",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "acid",
+					"pathName": "pages/acid/acid",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "exam",
+					"pathName": "pages/exam/exam",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "setting",
+					"pathName": "pages/setting/setting",
+					"query": ""
+				}
+			]
 		}
 	}
 }

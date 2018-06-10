@@ -10,11 +10,5 @@
   background-position: 95% 50%;
   background-size: 50rpx 50rpx;
   font-size: 16px;
-}
-  .button {
-  background: white;
-  border-bottom: 1px solid #eee;
-  padding: 0 12px;
-  height: 46px;
-  line-height: 46px;
+  text-align:left;
 }

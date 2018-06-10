@@ -1,13 +1,16 @@
 <!--pages/deviation/deviation.wxml-->
-<!--pages/mass/mass.wxml-->
-<view>
+<view class="container">
   <view class="inputarea">
-    <textarea bindinput="bindKeyInput" style=" width:100%;background: #fff;" focus/>
+    <textarea bindinput="bindKeyInput" focus/>
   </view>
   <view class="buttonarea">
-    <button class="button" type="primary" bindtap="deviation">{{button}}</button>
+    <button class="button" type="primary" bindtap="getdeviation">{{button}}</button>
   </view>
-  <view class="output" style="flex-direction:row;">
-    <text class="output">{{output}}</text>
+  <view class="outputarea" style="flex-direction:row;">
+    <rich-text nodes="{{output}}" class="outputtext" wx:if="{{output}}"></rich-text>
+  </view>
+    <view class="flex-wrap input-wrap" wx:for="{{array}}" wx:for-index="idx" wx:for-item="item" wx:key="name">
+    <rich-text nodes="{{item.name}}" class="label"></rich-text>
+    <rich-text nodes="{{item.value}}" class="info-input"></rich-text>
   </view>
 </view>

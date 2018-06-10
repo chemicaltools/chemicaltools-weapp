@@ -1,20 +1,26 @@
 <!--pages/acid/acid.wxml-->
-<radio-group class="radio-group" bindchange="radioChange" class="flex-wrap input-wrap">
-  <label class="radio" wx:for="{{items}}">
-    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-  </label>
-</radio-group>
-    <view class="flex-wrap input-wrap">
-<text class="label">{{pKaorpKb}}</text>
-<input type="digit" confirm-type="next" bindinput="bindKeyInputpKa"/>
-</view>
-    <view class="flex-wrap input-wrap">
-<text class="label">{{c}}</text>
-<input type="digit" confirm-type="next" bindinput="bindKeyInputc"/>
-</view>
-<view class="buttonarea">
-    <button class="button" type="primary" bindtap="acid">{{button}}</button>
+<view class="container">
+  <radio-group class="radio-group" bindchange="radioChange" class="flex-wrap input-wrap">
+    <label class="radio" wx:for="{{items}}" wx:key="{{item.name}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+  <view class="flex-wrap input-wrap">
+    <text class="label">{{pKaorpKb}}</text>
+    <input type="text" confirm-type="next" bindinput="bindKeyInputpKa" class="info-input" placeholder="如1.25 4.29（草酸）" focus/>
   </view>
-  <view class="output" style="flex-direction:row;">
-      <text class="output">{{output}}</text>
+  <view class="flex-wrap input-wrap">
+    <text class="label">{{c}}</text>
+    <input type="digit" confirm-type="next" bindinput="bindKeyInputc" class="info-input" placeholder="如0.1"  bindconfirm="getacid"/>
   </view>
+  <view class="buttonarea">
+    <button class="button" type="primary" bindtap="getacid">{{button}}</button>
+  </view>
+  <view class="outputarea" style="flex-direction:row;">
+     <rich-text nodes="{{output}}" class="outputtext"></rich-text>
+  </view>
+</view>
+<view class="footer" style="bottom:{{isIpx?'72rpx':'0'}};width: 100%;">
+  <navigator url="../setting/setting" class="setting tappable">设置</navigator>
+  <rich-text nodes="pK<sub>w</sub>={{pKw}}" class="label"></rich-text>
+</view>

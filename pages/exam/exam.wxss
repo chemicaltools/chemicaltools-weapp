@@ -1,1 +1,11 @@
 /* pages/exam/exam.wxss */
+.question{
+  font-size:30px;
+}
+.outputtext{
+  width:460rpx;
+}
+.elementimage{
+  height:310rpx;
+  width:230rpx;
+}

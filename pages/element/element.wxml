@@ -1,12 +1,19 @@
 <!--element.wxml-->
-<view>
+<view class="container">
   <view class="inputarea" class="flex-wrap input-wrap">
-    <input  bindinput="bindKeyInput" focus class="account-info-input"/>
+    <input bindinput="bindKeyInput" focus class="info-input" bindconfirm="getelement" placeholder="{{placeholder}}" />
   </view>
   <view class="buttonarea">
-    <button class="button" type="primary" bindtap="element" class="submit">{{button}}</button>
+    <button class="button" type="primary" bindtap="getelement" class="submit">{{button}}</button>
   </view>
-  <view class="output" style="flex-direction:row;">
-      <text class="output">{{output}}</text>
+  <view class="outputarea">
+    <rich-text nodes="{{output}}" class="outputtext" wx:if="{{output}}"></rich-text>
+  </view>
+  <view class="flex-wrap input-wrap center">
+    <image class="elementimage" src="{{imagesrc}}" wx:if="{{imagesrc}}" />
+  </view>
+  <view class="flex-wrap input-wrap" wx:for="{{elementarray}}" wx:for-index="idx" wx:for-item="item" wx:key="name">
+    <rich-text nodes="{{item.name}}" class="label"></rich-text>
+    <rich-text nodes="{{item.value}}" class="info-input"></rich-text>
   </view>
 </view>

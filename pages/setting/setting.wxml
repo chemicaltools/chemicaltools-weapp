@@ -1,0 +1,23 @@
+<!--pages/setting/setting.wxml-->
+<view class="container">
+  <view class="flex-wrap input-wrap">
+    <text class="section">酸碱计算</text>
+  </view>
+  <view class="flex-wrap input-wrap">
+    <rich-text nodes="pK<sub>w</sub>" class="label"></rich-text>
+    <input type="digit" bindinput="pKwchange" value="{{pKw}}" class="info-input" placeholder="如14" />
+  </view>
+  <view class="flex-wrap input-wrap">
+    <text class="section">元素记忆</text>
+  </view>
+  <view class="flex-wrap input-wrap">
+    <text class="label">测试模式</text>
+    <picker class="info-input" bindchange="exammodeChange" value="{{index}}" range="{{exammode}}">
+      <view>{{exammode[index]}}</view>
+    </picker>
+  </view>
+  <view class="flex-wrap input-wrap">
+    <text class="label">原子序数上限</text>
+    <slider class="info-input" bindchange="exammaxchange" min="4" max="118" show-value value="{{exammax}}" />
+  </view>
+</view>

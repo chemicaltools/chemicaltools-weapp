@@ -1,7 +1,15 @@
 <!--pages/exam/exam.wxml-->
-{{question}}
-<button class="button" bindtap="A">{{A}}</button>
-<button class="button" bindtap="B">{{B}}</button>
-<button class="button" bindtap="C">{{C}}</button>
-<button class="button" bindtap="D">{{D}}</button>
-{{output}}
+<view class="container">
+  <text class="question">{{question}}</text>
+  <block wx:for="{{todos}}" wx:for-item="item" wx:key="id">
+    <button class="button" bindtap="answer" data-answer="{{item}}">{{item}}</button>
+  </block>
+  <view class="outputarea" style="flex-direction:row;">
+    <rich-text nodes="{{output}}" class="outputtext"></rich-text>
+    <image class="elementimage" src="{{imagesrc}}" wx:if="{{imagesrc}}" />
+  </view>
+</view>
+<view class="footer" style="bottom:{{isIpx?'72rpx':'0'}};width: 100%;">
+  <navigator url="../setting/setting" class="setting tappable">设置</navigator>
+  <text>答对{{correctnumber}}题，答错{{wrongnumber}}题</text>
+</view>

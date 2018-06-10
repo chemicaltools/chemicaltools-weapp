@@ -1,12 +1,12 @@
 <!--pages/mass/mass.wxml-->
-<view>
+<view class="container">
   <view class="inputarea" class="flex-wrap input-wrap">
-    <input  bindinput="bindKeyInput" focus class="account-info-input"/>
+    <input  bindinput="bindKeyInput" focus class="info-input" bindconfirm="getmass" placeholder="{{placeholder}}"/>
   </view>
   <view class="buttonarea">
-    <button class="button" type="primary" bindtap="mass" class="submit">{{button}}</button>
+    <button class="button" type="primary" bindtap="getmass" class="submit">{{button}}</button>
   </view>
-  <view class="output" style="flex-direction:row;">
-      <text class="output">{{output}}</text>
+  <view class="outputarea" style="flex-direction:row;">
+     <rich-text nodes="{{output}}" class="outputtext"></rich-text>
   </view>
 </view>
