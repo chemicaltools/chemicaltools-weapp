@@ -43,7 +43,7 @@ Page({
         sum = sum + parseFloat(x[i])
         var len = x[i].length
         if (x[i].substr(0, 1) == "-") len = len - 1
-        if (x[i].indexOf(".")) {
+        if (x[i].indexOf(".")>=0) {
           len = len - 1
           var pointlen = len - x[i].indexOf(".");
           if (Math.abs(parseFloat(x[i])) < 1) {
