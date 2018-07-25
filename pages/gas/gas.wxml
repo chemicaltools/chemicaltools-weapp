@@ -24,3 +24,4 @@
   </radio-group>
   <button class="button" type="primary" bindtap="getgas">{{button}}</button>
 </view>
+<ad class="ad" unit-id="adunit-ce123f17fa184c5c"></ad>

@@ -9,4 +9,5 @@
   <view class="outputarea" style="flex-direction:row;">
      <rich-text nodes="{{output}}" class="outputtext"></rich-text>
   </view>
+  <ad class="ad" unit-id="adunit-2e2a0e7b7fd181ef"></ad>
 </view>

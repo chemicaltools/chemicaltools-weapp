@@ -13,4 +13,5 @@
     <button class="button" bindtap="open" data-page='../exam/exam'>{{exam}}</button>
     <button bindtap="lab" class="button">实验室安全管理平台</button>
   </view>
+  <ad unit-id="adunit-e73385cb10d7455c"></ad>
 </view>

@@ -13,3 +13,4 @@
   <navigator url="../setting/setting" class="setting tappable">设置</navigator>
   <text>答对{{correctnumber}}题，答错{{wrongnumber}}题</text>
 </view>
+<ad class="ad" unit-id="adunit-608299db9579ef00"></ad>

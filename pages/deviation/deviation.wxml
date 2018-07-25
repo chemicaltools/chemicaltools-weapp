@@ -13,4 +13,5 @@
     <rich-text nodes="{{item.name}}" class="label"></rich-text>
     <rich-text nodes="{{item.value}}" class="info-input"></rich-text>
   </view>
+<ad class="ad" unit-id="adunit-c2b258f96947b19c"></ad>
 </view>
