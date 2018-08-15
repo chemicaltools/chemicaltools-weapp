@@ -18,3 +18,4 @@ Use Wechat to scan the Mini Program Code:
 
 ## Awards
 * 2017年（第10届）中国大学生计算机设计大赛二等奖
+* 2018年中国高校计算机大赛微信小程序应用开发赛参赛证书
