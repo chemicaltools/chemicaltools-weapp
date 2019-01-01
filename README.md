@@ -20,3 +20,4 @@ Use Wechat to scan the Mini Program Code:
 
 * The Second Prize in 2017 (the 10th Session) Chinese College Student Computer Design Contest (2017年（第10届）中国大学生计算机设计大赛二等奖)
 * The Entry Certificate in 2018 China University Computer Contest WeChat Mini Program Application Development Competition (2018年中国高校计算机大赛微信小程序应用开发赛参赛证书)
+* The Third Prize of Invention & Innovation in the 24th Shanghai University Student Creation & Invention "Kechuang Cup" (第二十四届上海高校学生创造发明“科创杯”发明创新三等奖)
