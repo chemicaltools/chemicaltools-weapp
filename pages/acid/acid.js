@@ -1,6 +1,9 @@
 // pages/acid/acid.js
 var pKa, c
 var mode = "acid"
+const chem = require('../../utils/chem.js')
+const chemicaltools = require('chemicaltools')
+
 Page({
   data: {
     items: [
@@ -14,30 +17,24 @@ Page({
     isIpx: getApp().globalData.isIpx
   },
   radioChange: function (e) {
-    var page = this
     mode = e.detail.value
     if (mode == "acid") {
-      page.setData({
+      this.setData({
         pKaorpKb: "pKa",
       })
     } else {
-      page.setData({
+      this.setData({
         pKaorpKb: "pKb",
       })
     }
   },
   getacid: function () {
-    var page = this
-    if (mode == "acid") {
-      var AorB = true
-    } else {
-      var AorB = false
-    }
+    var AorB = (mode == "acid")
     var pKw = parseFloat(wx.getStorageSync('pKw'))
     if(!pKw) pKw=14
-    page.setData({pKw})
-    var output = page.calacid(parseFloat(c), pKa, AorB,pKw)
-    page.setData({ output })
+    this.setData({pKw})
+    var output = this.calacid(parseFloat(c), pKa, AorB,pKw)
+    this.setData({ output })
   },
   bindKeyInputc: function (e) {
     c = e.detail.value
@@ -56,102 +53,20 @@ Page({
     if (!pKw) pKw = 14
     this.setData({ pKw })
   },
-  calpH: function (pKa, c, pKw) {
-    var Ka1 = Math.pow(10, -pKa[0])
-    var Kw = Math.pow(10, -pKw)
-    var cH = (Math.sqrt(Ka1 * Ka1 + 4 * Ka1 * c + Kw) - Ka1) * 0.5
-    if (cH > 0) return -Math.log(cH) / Math.LN10
-    else return 1024
+  calacid: function (c, strpKa, AorB, pKw = 14) {
+    if (!strpKa || !c) return "请输入数据！"
+    var strpKaArray = strpKa.split(/[\r\n\\s ,;]+/)
+    var result = chemicaltools.calculateAcid(c, strpKaArray.map(parseFloat), AorB, pKw)
+    var output = "<b>{0}</b>, c={1}mol/L, ".format((AorB ? "HA" : "BOH"), c)
+    var i = 1;
+    strpKaArray.forEach(function (pKa) {
+      output += "pK<sub>{0}</sub>{1}={2}, ".format((AorB ? "a" : "b"), (strpKaArray.length > 1 ? "<sub>{0}</sub>".format(i++) : ''), pKa)
+    });
+    output += "<br>溶液的pH为{0}.".format(result.pH.toFixed(2))
+    result.ion.forEach(function (ion) {
+      output += "<br>c({0})={1}mol/L,".format(chem.chemicalname(ion.name), chem.sciconut(ion.c, 2))
+    })
+    output = output.substring(0, output.length - 1) + "."
+    return output
   },
-  calpHtoc: function (pKa, c, pH) {
-    var D = 0
-    var E = 1
-    var G = new Array()
-    var Ka = new Array()
-    var pHtoc = new Array()
-    var H = Math.pow(10, -pH)
-    var F = Math.pow(H, pKa.length + 1)
-    for (var i = 0; i < pKa.length; i++) {
-      Ka[i] = Math.pow(10, -pKa[i])
-    }
-    for (var i = 0; i < pKa.length + 1; i++) {
-      G[i] = F * E
-      D = D + G[i]
-      F = F / H
-      E = E * Ka[i]
-    }
-    for (var i = 0; i < pKa.length + 1; i++) {
-      pHtoc[i] = c * G[i] / D
-    }
-    return pHtoc
-  },
-  calacid: function (c, strpKa, AorB, pKw = 14, acidName = "HA") {
-    const liquidpKa = -1.74
-    if (!strpKa||!c) return "请输入数据！"
-    if (AorB) {
-      var ABname = "A"
-      var ABnameall = "HA"
-    } else {
-      var ABname = "B"
-      var ABnameall = "BOH"
-    }
-    var strpKaArray = strpKa.split(" ")
-    var valpKa = new Array()
-    for (var i = 0; i < strpKaArray.length; i++) {
-      valpKa[i] = parseFloat(strpKaArray[i])
-      if (valpKa[i] < liquidpKa) valpKa[i] = liquidpKa
-    }
-    var pH = this.calpH(valpKa, c, pKw)
-    var cAB = this.calpHtoc(valpKa, c, pH)
-    if (!AorB) pH = pKw - pH
-    var H = Math.pow(10, -pH)
-    var acidOutput = " ,c=" + c + "mol/L, "
-    for (var i = 0; i < valpKa.length; i++) {
-      if (AorB) acidOutput = acidOutput + "pK<sub>a</sub>"
-      else acidOutput = acidOutput + "pK<sub>b</sub>"
-      if (valpKa.length > 1) acidOutput = acidOutput + "<sub>" + (i + 1) + "</sub>"
-      acidOutput = acidOutput + "=" + strpKaArray[i] + ", "
-    }
-    acidOutput = acidOutput + "<br>溶液的pH为" + pH.toFixed(2) + "."
-    acidOutput = acidOutput + "<br>" + "c(H<sup>+</sup>)=" + this.sciconut(H, 2) + "mol/L,"
-    for (var i = 0; i < cAB.length; i++) {
-      var cABoutput = "c("
-      if (AorB) {
-        if (i < cAB.length - 1) {
-          cABoutput = cABoutput + "H"
-          if (cAB.length - i > 2) cABoutput = cABoutput + "<sub>" + (cAB.length - i - 1) + "</sub>"
-        }
-        cABoutput = cABoutput + ABname
-        if (i > 0) {
-          if (i > 1) cABoutput = cABoutput + "<sup>" + (i) + "</sup>"
-          cABoutput = cABoutput + "<sup>-</sup>"
-        }
-      } else {
-        cABoutput = cABoutput + ABname
-        if (cAB.length - i > 2) {
-          cABoutput = cABoutput + "(OH)<sub>" + (cAB.length - i - 1) + "</sub>"
-        } else if (cAB.length - i == 2) {
-          cABoutput = cABoutput + "OH"
-        }
-        if (i > 0) {
-          if (i > 1) cABoutput = cABoutput + "<sup>" + (i) + "</sup>"
-          cABoutput = cABoutput + "<sup>+</sup>"
-        }
-      }
-      cABoutput = cABoutput + ")="
-      acidOutput = acidOutput + "<br>" + cABoutput + this.sciconut(cAB[i], 2) + "mol/L,"
-    }
-    acidOutput = acidOutput.substring(0, acidOutput.length - 1) + "."
-    var acidOutputhtml = "<b>"+ABnameall +"</b>"+ acidOutput
-    return acidOutputhtml
-  },
-  sciconut: function (value, num) {
-    var p = Math.floor(Math.log(value) / Math.LN10)
-    var n = value * Math.pow(10, -p)
-    if (n == 0) {
-      return n.toFixed(num)
-    } else {
-      return n.toFixed(num) + "×10<sup>" + p + "</sup>"
-    }
-  }
 })

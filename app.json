@@ -10,7 +10,8 @@
     "pages/my/my",
     "pages/user/user",
     "pages/link/link",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",

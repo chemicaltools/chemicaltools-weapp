@@ -1,9 +1,8 @@
 //element.js
 //获取应用实例
-const pinyin = require('../../libs/pinyin.js')
+const chemicaltools = require('chemicaltools')
 var app = getApp()
 var inputValue
-var elementinfo
 Page({
   data: {
     button: '查询',
@@ -18,9 +17,8 @@ Page({
   getelement: function () {
     var that = this
     if (inputValue) {
-      var info = that.searchelement(inputValue)
+      var info = chemicaltools.searchElement(inputValue)
       if (info) {
-        //var output = "<b>元素名称：</b>\t" + info.name + "<br><b>元素符号：</b>\t" + info.symbol + "<br><b>IUPAC名：</b>\t" + info.iupac + "<br><b>原子序数：</b>\t" + info.number + "<br><b>相对原子质量：</b>\t" + info.mass + "<br><b>元素名称含义：</b>\t" + info.origin
         var output=""
         that.setData({
           elementarray:[
@@ -41,17 +39,8 @@ Page({
     }
     that.setData({ output })
   },
-  searchelement: function (input) {
-    var i = elementinfo.length
-    while (i--) {
-      if (elementinfo[i].name == input || elementinfo[i].number == input || elementinfo[i].symbol.toLowerCase() == String(input).toLowerCase() || elementinfo[i].iupac.toLowerCase() == String(input).toLowerCase() || elementinfo[i].pinyin.toLowerCase() == String(input).toLowerCase() || elementinfo[i].pinyin == pinyin.convertToPinyin(String(input)).toLowerCase()) {
-        return elementinfo[i]
-      }
-    }
-  },
   onLoad: function (options) {
     inputValue = options.input
-    elementinfo = app.globalData.elementinfo
     if (inputValue != null) {
       this.getelement()
     }

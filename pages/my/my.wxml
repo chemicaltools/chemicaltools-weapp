@@ -2,6 +2,10 @@
 <navigator url="../setting/setting" class="navigator user">设置</navigator>
 <navigator url="../user/user" class="navigator user">账户修改</navigator>
 <navigator url="../link/link" class="navigator user">账户绑定</navigator>
-<button open-type="contact"  class="navigator user">反馈意见</button>
+<button open-type="contact" class="navigator user">联系客服</button>
+<button open-type="feedback" class="navigator user">反馈意见</button>
 <button open-type="share" class="navigator user">分享小程序</button>
+<view class="navigator user" style="height:100%;line-height: 23px;">
+  <text>开源光荣\n</text><text style="font-size:14px;">https://github.com/njzjz/Chemical-Tools-weapp</text>
+</view>
 <ad class="ad" unit-id="adunit-e73385cb10d7455c"></ad>

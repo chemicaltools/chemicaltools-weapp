@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
+const AV = require("../../libs/av-weapp-min.js");
 Page({
   data: {
     defaultSize: 'default',
@@ -12,66 +13,51 @@ Page({
     exam: '元素记忆',
     userInfo: {}
   },
-  //事件处理函数
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+  onLoad: function() {
+    var that = this;
+    wx.getSetting({
+      success: function(res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function(res) {
+              const user = AV.User.current();
+              user.set(res.userInfo).save().then(user => {
+                app.globalData.user = user.toJSON();
+                that.setData({
+                  userInfo: app.globalData.user,
+                  hasUserInfo: true
+                })
+              }).catch(console.error);
+              wx.switchTab({
+                url: '../index/index'
+              })
+            }
+          })
+        } else {
+          wx.navigateTo({
+            url: '../info/info'
           })
         }
-      })
-    }
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      }
     })
   },
-  open: function ({ target: {
-    dataset: {
-      page
-    }
-  }
-  }) {
+  open: function(e) {
     wx.navigateTo({
-      url: page
+      url: e.target.dataset.page
     })
   },
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: '化学e+',
       path: "/pages/index/index"
     }
   },
-  lab: function () {
+  lab: function() {
     wx.navigateToMiniProgram({
       appId: 'wx49c5c6b9f350fd06',
       success(res) {
-        // 打开成功
+
       }
     })
   }
-
 })
