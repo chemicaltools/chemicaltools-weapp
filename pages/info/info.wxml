@@ -1,0 +1,17 @@
+<!--pages/info/info.wxml-->
+<view wx:if="{{canIUse}}">
+  <view class='header'>
+    <icon type="info" size="140" />
+  </view>
+
+  <view class='content'>
+    <view>化学e+申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+</view>
+
+<view wx:else>请升级微信版本</view>

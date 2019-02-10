@@ -13,7 +13,8 @@ Use Wechat to scan the Mini Program Code:
 ![Mini Program Code](https://i.loli.net/2018/07/06/5b3f4ecfcaf50.jpg)
 
 ## Packages used
-* [tiny-pinyin](https://github.com/creeperyang/pinyin)
+* [chemicaltools-js](https://github.com/njzjz/chemicaltools-js)
+* [string-format](https://github.com/davidchambers/string-format)
 * [LeanCloud JavaScript SDK](https://releases.leanapp.cn/#/leancloud/javascript-sdk/releases)
 
 ## Awards

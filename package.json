@@ -1,0 +1,29 @@
+{
+  "name": "chemical-tools-weapp",
+  "version": "1.0.0",
+  "description": "Chemical Tools for weapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njzjz/chemical-tools-weapp.git"
+  },
+  "keywords": [
+    "chemical",
+    "tools",
+    "weapp"
+  ],
+  "author": "Jinzhe Zeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njzjz/chemical-tools-weapp/issues"
+  },
+  "homepage": "https://github.com/njzjz/chemical-tools-weapp#readme",
+  "dependencies": {
+    "chemicaltools": "^1.0.14",
+    "string-format": "^2.0.0"
+  },
+  "devDependencies": {}
+}
