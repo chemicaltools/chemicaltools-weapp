@@ -1,4 +1,7 @@
 # Chemical Tools WeChat Mini Program (化学e+微信小程序)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/njzjz/Chemical-Tools-weapp.svg)](https://greenkeeper.io/)
+
 ![Chinese version](https://jaywcjlove.github.io/sb/lang/chinese.svg)
 
 Essential tools for chemistry students, which is a WeChat Mini Program.
