@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/njzjz/chemical-tools-weapp#readme",
   "dependencies": {
-    "chemicaltools": "^1.0.15",
+    "chemicaltools": "^1.0.17",
     "string-format": "^2.0.0"
   },
   "devDependencies": {}
